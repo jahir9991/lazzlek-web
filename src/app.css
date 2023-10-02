@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: #2563eb;
+    --color-white: #fff;
+    --color-dark: #111827;
+    --color-light: #e5e5e6;
+    --color-extra-light: #374151;
+    --color-dark-400: #262830;
+    --color-dark-500: #222222;
+    --color-dark-600: #101010;
+    --color-blue: #3498db;
+    --color-gray: #727273;
+    /* --color-light: #f5f5f6; */
+    --color-green: #07bc0c;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: var(--color-dark);
+    background: var(--color-primary);
+}
+
+::selection {
+    color: var(--color-dark);
+    background: var(--color-primary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', 'Montserrat', sans-serif;
+    @apply dark:bg-[--color-dark] bg-light;
+    touch-action: pan-x pan-y;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img,
+img::after,
+img::before,
+a,
+a::after,
+a::before {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+a,
+button {
+    outline: none;
+    /* @apply focus:!ring-0; */
+}
+
+label {
+    display: inline;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+@media (prefers-reduced-motion) {
+
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root::view-transition-old(root) {
+        animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+    }
+
+    :root::view-transition-new(root) {
+        animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+    }
+}
