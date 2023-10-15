@@ -9,6 +9,7 @@
 </div>
 
 <style lang="postcss">
+
 	#body {
 		@apply dark:bg-[--color-dark] bg-light;
 	}
